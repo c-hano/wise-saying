@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Level5main {
+public class Level6main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<Words> wordsList = new ArrayList<>();
