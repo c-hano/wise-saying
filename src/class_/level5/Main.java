@@ -13,8 +13,8 @@ public class Main {
 }
 
 class App {
-    // 인스턴스 변수
 
+    // 인스턴스 변수
     Scanner scanner = new Scanner(System.in);
     int count = 1;
     List<WiseSaying> wiseSayings = new ArrayList<>();
@@ -40,7 +40,7 @@ class App {
         scanner.close();
     }
 
-    void actionIndex() {
+    private void actionIndex() {
 
         System.out.println("번호 / 작가 / 명언");
         System.out.println("------------------");
@@ -51,15 +51,21 @@ class App {
         }
     }
 
-    void actionAdd() {
+    private void actionAdd() {
         System.out.print("명언 : ");
         String content = scanner.nextLine();
         System.out.print("작가 : ");
         String author = scanner.nextLine();
 
-        wiseSayings.add(new WiseSaying(count, content, author));
+        addWiseSaying(content, author);
+
 
         System.out.println(count + "번 명언이 등록되었습니다.");
+
+    }
+
+    private void addWiseSaying(String content, String author) {
+        wiseSayings.add(new WiseSaying(count, content, author));
         count++;
     }
 }
