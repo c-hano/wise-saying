@@ -32,13 +32,7 @@ class App {
             } else if (cmd.equals("등록")) {
                 actionAdd();
             } else if (cmd.equals("목록")) {
-                System.out.println("번호 / 작가 / 명언");
-                System.out.println("------------------");
-
-                for (WiseSaying words : wiseSayings) {
-                    System.out.println("%d / %s / %s".formatted(words.getId(), words.getAuthor(), words.getContent()));
-
-                }
+                actionIndex();
             }
 
         }
@@ -46,7 +40,18 @@ class App {
         scanner.close();
     }
 
-    void actionAdd(){
+    void actionIndex() {
+
+        System.out.println("번호 / 작가 / 명언");
+        System.out.println("------------------");
+
+        for (WiseSaying words : wiseSayings) {
+            System.out.println("%d / %s / %s".formatted(words.getId(), words.getAuthor(), words.getContent()));
+
+        }
+    }
+
+    void actionAdd() {
         System.out.print("명언 : ");
         String content = scanner.nextLine();
         System.out.print("작가 : ");
