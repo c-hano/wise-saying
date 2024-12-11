@@ -1,6 +1,5 @@
 package class_.level5;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,8 +16,6 @@ class App {
         System.out.println("== 명언 앱 ==");
         Scanner scanner = new Scanner(System.in);
         int count = 1;
-        List<WiseSaying> wiseSayings = new ArrayList<>();
-
         while (true) {
             System.out.print("명령) ");
             String cmd = scanner.nextLine();
@@ -31,18 +28,10 @@ class App {
                 System.out.print("작가 : ");
                 String author = scanner.nextLine();
 
-                wiseSayings.add(new WiseSaying(count, content, author));
+                WiseSaying wiseSaying = new WiseSaying(count, content, author);
 
                 System.out.println(count+ "번 명언이 등록되었습니다.");
                 count++;
-            } else if (cmd.equals("목록")) {
-                System.out.println("번호 / 작가 / 명언");
-                System.out.println("------------------");
-
-                for(WiseSaying words : wiseSayings) {
-                    System.out.println("%d / %s / %s".formatted(words.getId(), words.getAuthor(), words.getContent()));
-
-                }
             }
 
 
@@ -53,7 +42,6 @@ class App {
 }
 
 class WiseSaying {
-
     private int id;
     private String content;
     private String author;
@@ -62,17 +50,6 @@ class WiseSaying {
         this.id = id;
         this.content = content;
         this.author = author;
-    }
-    public int getId() {
-        return id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public String getAuthor() {
-        return author;
     }
 
 
