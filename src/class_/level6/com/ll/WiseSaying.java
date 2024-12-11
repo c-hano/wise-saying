@@ -1,4 +1,4 @@
-package class_.comll;
+package class_.level6.com.ll;
 
 public class WiseSaying {
 

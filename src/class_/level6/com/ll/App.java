@@ -1,4 +1,4 @@
-package class_.comll;
+package class_.level6.com.ll;
 
 
 import java.util.ArrayList;
@@ -24,6 +24,10 @@ public class App {
                 actionAdd();
             } else if (cmd.equals("목록")) {
                 actionIndex();
+            } else if (cmd.startsWith("삭제?id")) {
+                String str = cmd.substring(6);
+                int id = Integer.parseInt(str);
+                actionDelete(id);
             }
 
         }
@@ -31,12 +35,23 @@ public class App {
         scanner.close();
     }
 
+    private void actionDelete(int id) {
+
+        boolean removed = wiseSayings.removeIf(wiseSaying -> wiseSaying.getId() == id);
+        // removeIF() 안의 바디가 해당된다면 true를 반환한다.
+        if (removed) {
+            System.out.println(id + "번 명언을 삭제하였습니다");
+
+        }
+
+    }
+
     private void actionIndex() {
 
         System.out.println("번호 / 작가 / 명언");
         System.out.println("------------------");
 
-        for (int i = wiseSayings.size(); i == 0; i --) {
+        for (int i = wiseSayings.size()-1; i >= 0; i --) {
             System.out.printf("%d / %s / %s%n", wiseSayings.get(i).getId(), wiseSayings.get(i).getAuthor(), wiseSayings.get(i).getContent());
         }
         // .reversed() 순서 뒤집기
@@ -54,14 +69,14 @@ public class App {
 
         addWiseSaying(content, author);
 
-
         System.out.println(count + "번 명언이 등록되었습니다.");
+        count++;
 
     }
 
     private void addWiseSaying(String content, String author) {
         wiseSayings.add(new WiseSaying(count, content, author));
-        count++;
+
     }
 }
 
