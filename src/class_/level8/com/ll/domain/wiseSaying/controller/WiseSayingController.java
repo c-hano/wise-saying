@@ -3,7 +3,6 @@ package class_.level8.com.ll.domain.wiseSaying.controller;
 import class_.level8.com.ll.domain.wiseSaying.entity.WiseSaying;
 import class_.level8.com.ll.domain.wiseSaying.service.WiseSayingService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -79,7 +78,7 @@ public class WiseSayingController {
         System.out.print("작가 : ");
         String author = scanner.nextLine();
 
-        wiseSayingService.addWiseSaying(content, author);
+        wiseSayingService.add(content, author);
 
         System.out.println(wiseSayingService.getCount() + "번 명언이 등록되었습니다.");
 
