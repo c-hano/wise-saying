@@ -8,6 +8,11 @@ import java.util.Optional;
 
 public class WiseSayingService {
     private final List<WiseSaying> wiseSayings;
+
+    public int getCount() {
+        return count;
+    }
+
     private int count;
 
     public WiseSayingService() {
@@ -15,7 +20,7 @@ public class WiseSayingService {
         this.count = 1;
     }
 
-    public static void addWiseSaying(String content, String author) {
+    public  void addWiseSaying(String content, String author) {
         wiseSayings.add(new WiseSaying(count, content, author));
         count++;
     }
