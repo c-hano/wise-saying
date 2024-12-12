@@ -1,4 +1,4 @@
-package class_.level8.com.ll;
+package class_.level8.com.ll.domain.wiseSaying.entity;
 
 public class WiseSaying {
 
