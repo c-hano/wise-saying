@@ -1,6 +1,7 @@
 package class_.level8.com.ll.domain.wiseSaying.service;
 
 import class_.level8.com.ll.domain.wiseSaying.entity.WiseSaying;
+import class_.level8.com.ll.domain.wiseSaying.repository.WiseSayingMemoryRepository;
 import class_.level8.com.ll.domain.wiseSaying.repository.WiseSayingRepository;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class WiseSayingService {
     private final WiseSayingRepository wiseSayingRepository;
 
     public WiseSayingService() {
-        this.wiseSayingRepository = new WiseSayingRepository();
+        this.wiseSayingRepository = new WiseSayingMemoryRepository();
 
     }
 
@@ -20,7 +21,7 @@ public class WiseSayingService {
         WiseSaying wiseSaying = new WiseSaying(1, content, author);
 
         wiseSayingRepository.add(wiseSaying);
-
+        System.out.println(wiseSaying.getId() + "번 명언이 등록되었습니다.");
         return wiseSaying;
     }
 

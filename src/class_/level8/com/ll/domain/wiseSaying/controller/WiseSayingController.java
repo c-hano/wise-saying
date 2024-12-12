@@ -80,8 +80,6 @@ public class WiseSayingController {
 
         wiseSayingService.add(content, author);
 
-        System.out.println(wiseSayingService.getCount() + "번 명언이 등록되었습니다.");
-
 
     }
 }
